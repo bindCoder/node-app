@@ -19,7 +19,9 @@ app.use((req, res, next) => {
 
 
 app.get('/', (req, res) => {
-    res.send("<h1>Basic Server Setup</h1>" + __dirname);
+    res.render('home.hbs',{
+        about:'Welcome to my app'
+    });
 });
 
 app.get('/about', (req, res) => {
@@ -27,6 +29,13 @@ app.get('/about', (req, res) => {
         title: "Web App",
         about: "Some info about page",
         footer: "2018"
+    })
+});
+app.get('/project', (req, res) => {
+    res.render('about.hbs', {
+        title: "Web App",
+        about: "Some info about Projects",
+        footer: "2019"
     })
 });
 
